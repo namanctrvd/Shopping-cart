@@ -1,3 +1,3 @@
-# Shopping cart 
+# Shopping-Cart 
 
-#### Shopping cart implementation in javascript for a E-Commerse website.
+#### Shopping-Cart implementation in javascript for a E-Commerce website.
