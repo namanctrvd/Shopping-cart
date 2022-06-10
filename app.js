@@ -37,7 +37,6 @@ class Products {
 // display products
 class UI {
     displayProducts(products) {
-        console.log(products)
         let result = '';
         products.forEach(product => {
             result += `
@@ -55,6 +54,13 @@ class UI {
         });
         productDOM.innerHTML = result;
     }
+    getBagButtons() {
+        const buttons = [...document.querySelectorAll(".bag-btn")];
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            console.log(id);
+        });
+    };
 };
 
 // loacl storage
@@ -72,6 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     products.getProducts().then(products => {
         ui.displayProducts(products);
         Storage.saveProducts(products);
+    }).then(() => {
+        ui.getBagButtons();
     });
 });
 
