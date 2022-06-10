@@ -1,5 +1,4 @@
 // variables 
-
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -12,10 +11,8 @@ const productDOM = document.querySelector(".products-center");
 
 // cart
 let cart = [];
-
 // buttons 
 buttonsDOM  = [];
-
 // getting the prducts 
 class Products {
     async getProducts() {
@@ -28,13 +25,13 @@ class Products {
                 const { title, price } = item.fields;
                 const { id } = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return { title, price, id, image }
-            })
+                return { title, price, id, image };
+            });
             return products;
         } catch (error) {
-            console.log(errors)
-        }
-    }
+            console.log(errors);
+        };
+    };
 };
 
 // display products
@@ -52,8 +49,7 @@ class UI {
                 </div>
                 <h3>${product.title}</h3>
                 <h4><i class="fa-solid fa-indian-rupee-sign"></i> ${product.price}</h4>
-            </article>
-            `;
+            </article>`;
         });
         productDOM.innerHTML = result;
     }
@@ -82,9 +78,7 @@ class UI {
                 this.addCartItem(cartItem);
                 // show the cart
                 this.showCart();
-
             });
-            
         });
     };
     setCartValues(cart) {
@@ -163,10 +157,9 @@ class UI {
                 } else {
                     cartContent.removeChild(lowerAmount.parentElement.parentElement);
                     this.removeItem(id);
-                }
-                
-            }
-        })
+                };
+            };
+        });
     };
     clearCart() {
         let cartItems = cart.map(item => item.id);
@@ -204,16 +197,14 @@ class Storage {
     };
     static getCart() {
         return localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
-    }
+    };
 };
 
 document.addEventListener("DOMContentLoaded", () => {
     const ui = new UI();
     const products = new Products();
-
     // setup APP
     ui.setupAPP();
-
     // get products
     products.getProducts().then(products => {
         ui.displayProducts(products);
