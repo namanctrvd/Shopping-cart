@@ -62,7 +62,7 @@ class UI {
             if(inCart) {
                 button.innerText = "In Cart";
                 button.disabled = true;
-            }
+            };
             button.addEventListener("click", event => {
                 event.target.innerText = "in Cart";
                 event.target.disabled = true;
