@@ -58,7 +58,7 @@ body {
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
-  background: url("./images/hero-bcg.jpeg") center/cover no-repeat;
+  background: url("./images/hero.jpeg") center/cover no-repeat;
   /* height: 50%; */
   display: flex;
   align-items: center;
@@ -118,6 +118,8 @@ html {
 .img-container {
   position: relative;
   overflow: hidden;
+  border: 2px solid rgb(231, 226, 221);
+
 }
 .bag-btn {
   position: absolute;
