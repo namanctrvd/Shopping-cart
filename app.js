@@ -24,13 +24,13 @@ buttonsDOM  = [];
 class Products {
     async getProducts() {
         try {
-
+            //getting the data from contentful
             const response = await client.getEntries({
                 content_type: 'shoppingCart'
             });
-
-            let result = await fetch("products.json");
-            let data = await result.json();
+            // getting the data from local storage
+            // let result = await fetch("products.json");
+            // let data = await result.json();
 
             let products = response.items;
             products = products.map(item => {
